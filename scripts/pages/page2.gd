@@ -90,9 +90,7 @@ func _process_growth(delta):
 func _on_interaction_complete():
 	interaction_completed = true
 	
-	# Hide watering can and instruction
-	if watering_can:
-		watering_can.visible = false
+	# Hide instruction
 	if instruction:
 		instruction.visible = false
 		
