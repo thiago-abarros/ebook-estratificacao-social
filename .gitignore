@@ -4,7 +4,6 @@
 
 # Godot-specific files
 *.translation
-export_presets.cfg
 export.cfg
 
 # Exported builds
