@@ -55,7 +55,10 @@ func _ready():
 		target_position = watering_can.position
 
 func _process(delta):
-	# Smooth drag
+	# ========================================
+	# ANIMAÇÃO: Interpolação (Lerp)
+	# Movimento suave do regador usando interpolação linear
+	# ========================================
 	if watering_can:
 		watering_can.global_position = watering_can.global_position.lerp(target_position, delta * drag_smoothing)
 		
@@ -94,7 +97,10 @@ func _on_interaction_complete():
 	if instruction:
 		instruction.visible = false
 		
-	# Show balloon
+	# ========================================
+	# ANIMAÇÃO: Interpolação (Tween)
+	# Fade-in suave do balão de texto
+	# ========================================
 	if text_balloon:
 		text_balloon.visible = true
 		text_balloon.modulate.a = 0.0
@@ -119,6 +125,10 @@ func _update_tree_visuals():
 		var idx = int(poor_growth)
 		poor_tree_2.texture = poor_tree_textures[idx]
 
+# ========================================
+# INTERAÇÃO: Arrastar
+# Captura eventos de mouse e toque para arrastar o regador
+# ========================================
 func _input(event):
 	if not watering_can:
 		return

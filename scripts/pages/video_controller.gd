@@ -53,11 +53,18 @@ func _on_video_finished():
 	# Update button to show play icon
 	_update_button_icon()
 
+# ========================================
+# INTERAÇÃO: Toque
+# Botão para play/pause do vídeo
+# ========================================
 func _on_toggle_pressed():
 	if video_player.paused:
-		# Resume playing
+		# ========================================
+		# ANIMAÇÃO: Vídeo
+		# Reprodução de vídeo
+		# ========================================
 		video_player.paused = false
-		# Interrompe a transcrição de áudio da página se estiver tocando
+		# Stop page audio transcription if it's playing
 		if Global.has_method("parar_audio"):
 			Global.parar_audio()
 	else:
@@ -67,43 +74,47 @@ func _on_toggle_pressed():
 	# Update button icon
 	_update_button_icon()
 
+# ========================================
+# INTERAÇÃO: Toque
+# Botão para reiniciar o vídeo
+# ========================================
 func _on_restart_pressed():
 	if is_restarting:
 		return
 
-	# Se já estiver no comecinho (menos de 0.2s), ignora para não travar
+	# If already at the beginning (less than 0.2s), ignore to prevent freezing
 	if video_player.stream_position < 0.2:
 		return
 
 	is_restarting = true
 	
-	# 1. Salva se estava pausado ou tocando
+	# 1. Save whether it was paused or playing
 	var was_paused = video_player.paused
 	
-	# 2. Truque para não sumir a imagem:
-	# Não usamos stop(). Apenas despausamos e voltamos o tempo.
+	# 2. Trick to prevent image from disappearing:
+	# We don't use stop(). Just unpause and rewind the time.
 	video_player.paused = true
 	video_player.stop()
 	video_player.stream_position = 0.0
 	video_player.paused = false
 	
-	# Se o vídeo tinha chegado ao fim (acabou), ele para de tocar internamente.
-	# Nesse caso, forçamos o play novamente.
+	# If the video had reached the end, it stops playing internally.
+	# In that case, we force play again.
 	if not video_player.is_playing():
 		video_player.play()
 	
-	# 3. Aguarda o vídeo atualizar o frame visualmente (essencial)
+	# 3. Wait for the video to update the frame visually (essential)
 	await get_tree().process_frame
 	
-	# 4. Restaura o estado anterior
-	# Se estava pausado antes, pausamos novamente agora no frame 0
+	# 4. Restore previous state
+	# If it was paused before, pause it again now at frame 0
 	if was_paused:
 		video_player.paused = true
 	
 	_update_button_icon()
 	
-	# Pequeno delay de segurança antes de liberar o botão novamente
-	# Isso impede o clique duplo "frenético" que faz a tela piscar
+	# Small safety delay before allowing the button to be pressed again
+	# This prevents frantic double-clicks that make the screen flicker
 	await get_tree().create_timer(0.2).timeout
 	
 	is_restarting = false

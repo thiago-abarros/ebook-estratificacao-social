@@ -30,6 +30,10 @@ func _ready():
 		if button is TextureButton:
 			button.pressed.connect(_on_item_pressed.bind(button))
 
+# ========================================
+# INTERAÇÃO: Toque
+# Toque nos botões de itens para coletar
+# ========================================
 func _on_item_pressed(button: TextureButton):
 	# Rotate the collected item
 	# button.visible = false
@@ -39,6 +43,10 @@ func _on_item_pressed(button: TextureButton):
 	items_collected += 1
 	_update_tree_state()
 
+# ========================================
+# ANIMAÇÃO: Várias imagens consecutivas
+# Alterna texturas das árvores baseado em itens coletados
+# ========================================
 func _update_tree_state():
 	var texture_index = 0
 	

@@ -103,6 +103,10 @@ func _on_interaction_complete():
 	if audio_player:
 		audio_player.play()
 
+# ========================================
+# ANIMAÇÃO: Física
+# Simulação de física com gravidade, fricção e colisão
+# ========================================
 func _apply_physics(seed_node, data, delta):
 	var velocity = data.velocity
 	var gravity = GRAVITY_HEAVY
@@ -176,6 +180,10 @@ func _get_grass_top_y():
 	# Return top Y of visible texture + small buffer
 	return grass.global_position.y + y_offset + (actual_height * 0.2)
 
+# ========================================
+# INTERAÇÃO: Arrastar
+# Captura eventos de mouse e toque para arrastar sementes
+# ========================================
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:

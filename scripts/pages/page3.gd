@@ -11,9 +11,6 @@ var target_zoom = 1.0
 var zoom_speed = 0.05
 var smooth_speed = 3.0
 
-# ... (existing code)
-
-
 # Touch variables
 var touch_points = {}
 var start_distance = 0.0
@@ -34,7 +31,10 @@ func _process(delta):
 	if not tree_sprite:
 		return
 		
-	# Smoothly interpolate current_zoom towards target_zoom
+	# ========================================
+	# ANIMAÇÃO: Interpolação (Lerp)
+	# Zoom suave usando interpolação linear
+	# ========================================
 	current_zoom = lerp(current_zoom, target_zoom, smooth_speed * delta)
 	
 	# Apply scale
@@ -77,7 +77,10 @@ func _input(event):
 		if event.delta.y < 0:
 			_zoom_in()
 			
-	# Mobile: Touch Pinch
+	# ========================================
+	# INTERAÇÃO: Múltiplos toques (Pinça)
+	# Detecção de gestos multi-touch para zoom
+	# ========================================
 	if event is InputEventScreenTouch:
 		if event.pressed:
 			touch_points[event.index] = event.position
@@ -128,6 +131,10 @@ func _show_post_zoom_elements():
 	if post_zoom_container and not post_zoom_container.visible:
 		post_zoom_container.modulate.a = 0.0
 		post_zoom_container.visible = true
+		# ========================================
+		# ANIMAÇÃO: Interpolação (Tween)
+		# Fade-in dos elementos pós-zoom
+		# ========================================
 		var tween = create_tween()
 		tween.tween_property(post_zoom_container, "modulate:a", 1.0, 1.0)
 		

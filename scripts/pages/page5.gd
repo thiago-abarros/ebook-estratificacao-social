@@ -86,6 +86,10 @@ func _process(delta):
 			if instruction and instruction.visible:
 				instruction.visible = false
 	
+	# ========================================
+	# INTERAÇÃO: Acelêrômetro
+	# Captura dados de movimento do dispositivo
+	# ========================================
 	var accel = Input.get_accelerometer()
 	
 	# Simple shake detection: measure change in acceleration
@@ -178,6 +182,10 @@ func _update_visuals():
 		Phase.GROWTH:
 			_update_growth_visuals()
 
+# ========================================
+# ANIMAÇÃO: Várias imagens consecutivas
+# Alterna entre texturas para criar animação de balanço
+# ========================================
 func _update_sway_visuals():
 	# Tree 1 - responsive tilt
 	if current_tilt > 0.5:
@@ -197,6 +205,10 @@ func _update_sway_visuals():
 	else:
 		tree2.texture = t2_sway_base
 
+# ========================================
+# ANIMAÇÃO: Várias imagens consecutivas
+# Alterna entre texturas para criar animação de crescimento
+# ========================================
 func _update_growth_visuals():
 	var idx = int(shake_energy)
 	
