@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bvtqmo4gussln" path="res://scenes/base/content_page.tscn" id="1_content"]
 [ext_resource type="Texture2D" uid="uid://m5w1bxxkmrog" path="res://assets/images/pages/page4.png" id="2_bg"]
-[ext_resource type="VideoStream" path="res://assets/videos/cortella-video-godot.ogv" id="3_video"]
+[ext_resource type="VideoStream" uid="uid://dllut558nckd" path="res://assets/videos/cortella-video-godot.ogv" id="3_video"]
 [ext_resource type="Script" uid="uid://vusys8ut1isu" path="res://scripts/pages/video_controller.gd" id="4_script"]
 [ext_resource type="Texture2D" uid="uid://jlipfvsnas1o" path="res://assets/images/buttons/play-button.png" id="5_play"]
 [ext_resource type="Texture2D" uid="uid://cj4iqegocvtjc" path="res://assets/images/buttons/restart-button.png" id="6_restart"]
