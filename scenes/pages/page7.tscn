@@ -1,0 +1,186 @@
+[gd_scene load_steps=10 format=3 uid="uid://cft7roxj4p482"]
+
+[ext_resource type="PackedScene" uid="uid://bvtqmo4gussln" path="res://scenes/base/content_page.tscn" id="1_content"]
+[ext_resource type="Texture2D" uid="uid://bh8gy543pp22o" path="res://assets/images/pages/page7.png" id="2_bg"]
+[ext_resource type="Script" uid="uid://bslrn1flpin2b" path="res://scripts/pages/page7.gd" id="3_script"]
+[ext_resource type="Texture2D" uid="uid://dvji5esdgbbtd" path="res://assets/images/animations/page7/tree-growing/tree-growing-1.png" id="4_tree"]
+[ext_resource type="Texture2D" uid="uid://by6cehp87bd02" path="res://assets/images/animations/page7/Interactive/item1.png" id="5_item1"]
+[ext_resource type="Texture2D" uid="uid://dced3crrdtbbd" path="res://assets/images/animations/page7/Interactive/item2.png" id="6_item2"]
+[ext_resource type="Texture2D" uid="uid://3hxh3rnin4xr" path="res://assets/images/animations/page7/Interactive/item3.png" id="7_item3"]
+[ext_resource type="Texture2D" uid="uid://du0fmj4n7o6qb" path="res://assets/images/animations/page7/Interactive/item4.png" id="8_item4"]
+[ext_resource type="Texture2D" uid="uid://d4b6m14afp7s5" path="res://assets/images/text-balloon/page7-1.png" id="9_balloon1"]
+
+[node name="Page7" instance=ExtResource("1_content")]
+script = ExtResource("3_script")
+
+[node name="background" parent="." index="0"]
+texture = ExtResource("2_bg")
+
+[node name="MainContainer" type="Control" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TreeContainer" type="Control" parent="MainContainer" index="0"]
+layout_mode = 1
+anchor_left = 0.051
+anchor_top = 0.649
+anchor_right = 0.643
+anchor_bottom = 0.859
+offset_left = -39.168
+offset_top = -664.576
+offset_right = 274.176
+offset_bottom = 144.384
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TreeSprite" type="TextureRect" parent="MainContainer/TreeContainer" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.01
+anchor_top = 0.539
+anchor_right = 0.38
+anchor_bottom = 0.783
+offset_left = -16.32
+offset_top = 0.0640259
+offset_right = -16.32
+offset_bottom = 0.0640259
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_tree")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TreeSprite2" type="TextureRect" parent="MainContainer/TreeContainer" index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.166
+anchor_top = 0.539
+anchor_right = 0.557
+anchor_bottom = 0.783
+offset_left = -16.32
+offset_top = 0.0640259
+offset_right = -16.32
+offset_bottom = 0.0640259
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_tree")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TreeSprite3" type="TextureRect" parent="MainContainer/TreeContainer" index="2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.354
+anchor_top = 0.539
+anchor_right = 0.745
+anchor_bottom = 0.783
+offset_left = -16.32
+offset_top = 0.0640259
+offset_right = -16.32
+offset_bottom = 0.0640259
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_tree")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemsContainer" type="Control" parent="MainContainer" index="1"]
+layout_mode = 1
+anchor_left = 0.051
+anchor_top = 0.409
+anchor_right = 0.619
+anchor_bottom = 0.635
+offset_left = -39.168
+offset_top = -418.816
+offset_right = 292.608
+offset_bottom = 373.76
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Item1" type="TextureButton" parent="MainContainer/ItemsContainer" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.208
+anchor_top = 0.43
+anchor_right = 0.333
+anchor_bottom = 0.596
+offset_bottom = -74.752
+pivot_offset = Vector2(48, 48)
+texture_normal = ExtResource("5_item1")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Item2" type="TextureButton" parent="MainContainer/ItemsContainer" index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.354
+anchor_top = 0.422
+anchor_right = 0.479
+anchor_bottom = 0.605
+offset_bottom = -83.968
+pivot_offset = Vector2(48, 48)
+texture_normal = ExtResource("6_item2")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Item3" type="TextureButton" parent="MainContainer/ItemsContainer" index="2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.042
+anchor_top = 0.43
+anchor_right = 0.177
+anchor_bottom = 0.598
+offset_bottom = -76.8
+pivot_offset = Vector2(48, 48)
+texture_normal = ExtResource("7_item3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Item4" type="TextureButton" parent="MainContainer/ItemsContainer" index="3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.422
+anchor_right = 0.635
+anchor_bottom = 0.606
+offset_right = -6.10352e-05
+offset_bottom = -92.16
+pivot_offset = Vector2(48, 48)
+texture_normal = ExtResource("8_item4")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextBalloon" type="TextureRect" parent="MainContainer" index="2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.652
+anchor_top = 0.472
+anchor_right = 0.98
+anchor_bottom = 0.724
+offset_left = -35.736
+offset_top = 30.672
+offset_right = 12.36
+offset_bottom = -27.376
+grow_horizontal = 2
+texture = ExtResource("9_balloon1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="botao-proximo" parent="." index="3"]
+offset_left = -208.0
+offset_top = -87.9999
+offset_right = 63.0001
+offset_bottom = 14.0
+
+[node name="botao-anterior" parent="." index="4"]
+offset_left = 32.0
+offset_top = -88.0
+offset_right = 296.0
+offset_bottom = 2.0

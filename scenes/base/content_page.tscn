@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvtqmo4gussln"]
+
+[ext_resource type="PackedScene" uid="uid://6n4qw5mbuntv" path="res://scenes/base/base_page.tscn" id="1_base"]
+[ext_resource type="Texture2D" uid="uid://dk28628fuvqmj" path="res://assets/images/buttons/botao-proximo.png" id="2_next"]
+[ext_resource type="Texture2D" uid="uid://j87qukviubcu" path="res://assets/images/buttons/botao-anterior.png" id="3_prev"]
+
+[node name="ContentPage" instance=ExtResource("1_base")]
+
+[node name="botao-proximo" type="TextureButton" parent="." index="2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -216.0
+offset_top = -95.9999
+offset_right = 55.0001
+offset_bottom = 6.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.65, 0.65)
+texture_normal = ExtResource("2_next")
+stretch_mode = 0
+
+[node name="botao-anterior" type="TextureButton" parent="." index="3"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -96.0
+offset_right = 304.0
+offset_bottom = -6.0
+grow_vertical = 0
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("3_prev")

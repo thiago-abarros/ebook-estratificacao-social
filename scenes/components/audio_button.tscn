@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://brlqak54osjgd"]
+
+[ext_resource type="Texture2D" path="res://assets/images/buttons/som-ligado.png" id="1_som"]
+[ext_resource type="Script" path="res://scripts/components/audio_button.gd" id="2_script"]
+
+[node name="AudioButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_som")
+script = ExtResource("2_script")

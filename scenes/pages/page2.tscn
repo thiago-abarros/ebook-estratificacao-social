@@ -1,0 +1,165 @@
+[gd_scene load_steps=11 format=3 uid="uid://ccdre766naffu"]
+
+[ext_resource type="PackedScene" uid="uid://bvtqmo4gussln" path="res://scenes/base/content_page.tscn" id="1_content"]
+[ext_resource type="Texture2D" uid="uid://c4fybbum041wd" path="res://assets/images/pages/page2.png" id="2_bg"]
+[ext_resource type="Texture2D" uid="uid://pe35ius21l8y" path="res://assets/images/animations/page2/tree-floor/tree-floor.png" id="3_floor"]
+[ext_resource type="Script" uid="uid://bot7gknpsgmqn" path="res://scripts/pages/page2.gd" id="3_script"]
+[ext_resource type="Texture2D" uid="uid://cg7sl2cmfod3p" path="res://assets/images/instructions/watering-can-instruction.png" id="4_instruction"]
+[ext_resource type="Texture2D" uid="uid://dinoetylylpjn" path="res://assets/images/animations/page2/watering-can/watering-can1.png" id="5_can"]
+[ext_resource type="Texture2D" uid="uid://dlsxj24xmne81" path="res://assets/images/animations/page2/poor-tree/poor-tree1.png" id="7_poor_tree"]
+[ext_resource type="Texture2D" uid="uid://dv8tlq2uywh5u" path="res://assets/images/animations/page2/rich-tree/rich-tree1.png" id="8_rich_tree"]
+[ext_resource type="Texture2D" uid="uid://dp2jxx5few8bi" path="res://assets/images/text-balloon/page2-pos-interaction.png" id="9_balloon"]
+[ext_resource type="AudioStream" uid="uid://dkujec1ppwrox" path="res://assets/audio/transcriptions/pos-interaction/page2-pos-instruction.ogg" id="10_audio"]
+
+[node name="Page2" instance=ExtResource("1_content")]
+script = ExtResource("3_script")
+
+[node name="background" parent="." index="0"]
+texture = ExtResource("2_bg")
+
+[node name="MainContainer" type="Control" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TreeFloor" type="TextureRect" parent="MainContainer" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.292
+anchor_top = 0.602
+anchor_right = 0.979
+anchor_bottom = 0.961
+offset_left = 23.744
+offset_top = 47.5519
+offset_right = 0.127991
+offset_bottom = -56.064
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_floor")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TreesContainer" type="Control" parent="MainContainer" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="PoorTree1" type="TextureRect" parent="MainContainer/TreesContainer" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.333
+anchor_top = 0.68
+anchor_right = 0.521
+anchor_bottom = 0.883
+offset_left = 24.256
+offset_top = -8.32001
+offset_right = -24.128
+offset_bottom = -96.192
+texture = ExtResource("7_poor_tree")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichTree" type="TextureRect" parent="MainContainer/TreesContainer" index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.531
+anchor_top = 0.75
+anchor_right = 0.781
+anchor_bottom = 0.867
+offset_left = 0.191986
+offset_top = -64.0001
+offset_right = 8.19202
+offset_bottom = -15.808
+texture = ExtResource("8_rich_tree")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PoorTree2" type="TextureRect" parent="MainContainer/TreesContainer" index="2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.812
+anchor_top = 0.68
+anchor_right = 0.969
+anchor_bottom = 0.867
+offset_left = 16.384
+offset_top = -8.32001
+offset_right = -16.192
+offset_bottom = -87.808
+texture = ExtResource("7_poor_tree")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Instruction" type="TextureRect" parent="MainContainer" index="2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.073
+anchor_top = 0.437
+anchor_right = 0.344
+anchor_bottom = 0.586
+offset_left = -8.064
+offset_top = -23.488
+offset_right = 8.57599
+offset_bottom = -15.856
+texture = ExtResource("4_instruction")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WateringCan" type="TextureRect" parent="MainContainer" index="3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.073
+anchor_top = 0.555
+anchor_right = 0.24
+anchor_bottom = 0.734
+offset_left = -8.064
+offset_top = -16.32
+offset_right = 31.68
+offset_bottom = -23.616
+pivot_offset = Vector2(100, 100)
+texture = ExtResource("5_can")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DropSpawner" type="Marker2D" parent="MainContainer/WateringCan" index="0"]
+position = Vector2(160, 100)
+
+[node name="TextBalloon" type="TextureRect" parent="MainContainer" index="4"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.052
+anchor_top = 0.454
+anchor_right = 0.428
+anchor_bottom = 0.812
+offset_left = -7.936
+offset_top = -0.895996
+offset_right = 15.296
+offset_bottom = -72.488
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_balloon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("10_audio")
+
+[node name="botao-proximo" parent="." index="4"]
+offset_left = -208.0
+offset_top = -87.9999
+offset_right = 63.0001
+offset_bottom = 14.0
+
+[node name="botao-anterior" parent="." index="5"]
+offset_left = 32.0
+offset_top = -88.0
+offset_right = 296.0
+offset_bottom = 2.0

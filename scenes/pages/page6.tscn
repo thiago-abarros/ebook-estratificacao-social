@@ -1,0 +1,177 @@
+[gd_scene load_steps=11 format=3 uid="uid://cquymqjm5gxg"]
+
+[ext_resource type="PackedScene" uid="uid://bvtqmo4gussln" path="res://scenes/base/content_page.tscn" id="1_content"]
+[ext_resource type="Texture2D" uid="uid://8el0f61kllpb" path="res://assets/images/pages/page6.png" id="2_bg"]
+[ext_resource type="Script" uid="uid://brfgv2w8msceo" path="res://scripts/pages/page6.gd" id="3_script"]
+[ext_resource type="Texture2D" uid="uid://cqy85j7olut88" path="res://assets/images/animations/page6/grass.png" id="4_grass"]
+[ext_resource type="Texture2D" uid="uid://v4x170ph8mn6" path="res://assets/images/instructions/arrastar-sementes.png" id="5_instruction"]
+[ext_resource type="Texture2D" uid="uid://cy6tmbs6tfovw" path="res://assets/images/animations/page6/semente-leve.png" id="6_seed_light"]
+[ext_resource type="Texture2D" uid="uid://corvoojj6leri" path="res://assets/images/animations/page6/semente-pesada.png" id="7_seed_heavy"]
+[ext_resource type="Texture2D" uid="uid://bb0yxxafloqf0" path="res://assets/images/text-balloon/page6-pos-interaction.png" id="8_balloon"]
+[ext_resource type="AudioStream" uid="uid://bkwwrl4rytp2" path="res://assets/audio/transcriptions/pos-interaction/page6-pos-interaction.ogg" id="9_audio"]
+[ext_resource type="Texture2D" uid="uid://sr7a7jl0s66i" path="res://assets/images/animations/page6/page-number.png" id="10_number"]
+
+[node name="Page6" instance=ExtResource("1_content")]
+script = ExtResource("3_script")
+
+[node name="background" parent="." index="0"]
+texture = ExtResource("2_bg")
+
+[node name="MainContainer" type="Control" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Grass" type="TextureRect" parent="MainContainer" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.826
+anchor_right = 1.0
+anchor_bottom = 1.092
+offset_left = 2.0
+offset_top = 0.175964
+offset_right = 3.0
+offset_bottom = -88.208
+texture = ExtResource("4_grass")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SeedsContainer" type="Control" parent="MainContainer" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 16.0
+offset_right = -2.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SeedLight1" type="TextureRect" parent="MainContainer/SeedsContainer" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.098
+anchor_top = 0.584
+anchor_right = 0.197
+anchor_bottom = 0.765
+offset_left = -0.264
+offset_top = 12.9839
+offset_right = -0.296005
+offset_bottom = 42.64
+texture = ExtResource("6_seed_light")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SeedLight2" type="TextureRect" parent="MainContainer/SeedsContainer" index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.593
+anchor_right = 0.409
+anchor_bottom = 0.751
+offset_left = 6.59999
+offset_top = 14.7679
+offset_right = -0.312012
+offset_bottom = 6.57581
+texture = ExtResource("6_seed_light")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SeedHeavy1" type="TextureRect" parent="MainContainer/SeedsContainer" index="2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.677
+anchor_right = 0.597
+anchor_bottom = 0.867
+offset_left = -2.0
+offset_top = -10.248
+offset_right = 0.303955
+offset_bottom = -51.2081
+texture = ExtResource("7_seed_heavy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SeedHeavy2" type="TextureRect" parent="MainContainer/SeedsContainer" index="3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.7
+anchor_top = 0.3
+anchor_right = 0.81
+anchor_bottom = 0.833
+offset_left = 24.4
+offset_top = 274.8
+offset_right = 16.72
+offset_bottom = -117.392
+texture = ExtResource("7_seed_heavy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Instruction" type="TextureRect" parent="MainContainer" index="2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08
+anchor_top = 0.442
+anchor_right = 0.372
+anchor_bottom = 0.662
+offset_left = -8.44
+offset_top = -7.60803
+offset_right = 13.304
+offset_bottom = -101.888
+texture = ExtResource("5_instruction")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextBalloon" type="TextureRect" parent="MainContainer" index="3"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.436
+anchor_right = 0.423
+anchor_bottom = 0.909
+offset_left = 12.904
+offset_top = -1.46402
+offset_right = 26.136
+offset_bottom = -136.816
+texture = ExtResource("8_balloon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("9_audio")
+
+[node name="PageNumber" type="TextureRect" parent="." index="3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -98.0
+offset_right = 64.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("10_number")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="botao-proximo" parent="." index="5"]
+offset_left = -208.0
+offset_top = -87.9999
+offset_right = 63.0001
+offset_bottom = 14.0
+
+[node name="botao-anterior" parent="." index="6"]
+offset_left = 32.0
+offset_top = -88.0
+offset_right = 296.0
+offset_bottom = 2.0

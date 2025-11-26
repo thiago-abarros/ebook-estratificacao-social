@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbu71m60ptvng"]
+
+[ext_resource type="PackedScene" uid="uid://bvtqmo4gussln" path="res://scenes/base/content_page.tscn" id="1_content"]
+[ext_resource type="Texture2D" uid="uid://m5w1bxxkmrog" path="res://assets/images/pages/page4.png" id="2_bg"]
+[ext_resource type="VideoStream" path="res://assets/videos/cortella-video-godot.ogv" id="3_video"]
+[ext_resource type="Script" uid="uid://vusys8ut1isu" path="res://scripts/pages/video_controller.gd" id="4_script"]
+[ext_resource type="Texture2D" uid="uid://jlipfvsnas1o" path="res://assets/images/buttons/play-button.png" id="5_play"]
+[ext_resource type="Texture2D" uid="uid://cj4iqegocvtjc" path="res://assets/images/buttons/restart-button.png" id="6_restart"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rounded"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Page4" instance=ExtResource("1_content")]
+script = ExtResource("4_script")
+
+[node name="background" parent="." index="0"]
+texture = ExtResource("2_bg")
+
+[node name="VideoContainer" type="AspectRatioContainer" parent="." index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.419
+anchor_right = 0.9
+anchor_bottom = 0.784
+offset_left = 3.2
+offset_top = 3.94397
+offset_right = 2.79999
+offset_bottom = 3.18396
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+ratio = 1.7778
+
+[node name="VideoPanel" type="PanelContainer" parent="VideoContainer" index="0"]
+clip_children = 1
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rounded")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="VideoContainer/VideoPanel" index="0"]
+layout_mode = 2
+mouse_filter = 2
+stream = ExtResource("3_video")
+expand = true
+
+[node name="ToggleButton" type="TextureButton" parent="." index="2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.637
+anchor_right = 0.5
+anchor_bottom = 0.637
+offset_left = -128.0
+offset_top = 161.712
+offset_right = 202.0
+offset_bottom = 523.712
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.33, 0.33)
+texture_normal = ExtResource("5_play")
+
+[node name="RestartButton" type="TextureButton" parent="." index="3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.637
+anchor_right = 0.5
+anchor_bottom = 0.637
+offset_left = 17.0
+offset_top = 161.712
+offset_right = 347.0
+offset_bottom = 523.712
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.33, 0.33)
+texture_normal = ExtResource("6_restart")
+
+[node name="botao-proximo" parent="." index="5"]
+offset_left = -208.0
+offset_top = -87.9999
+offset_right = 63.0001
+offset_bottom = 14.0
+
+[node name="botao-anterior" parent="." index="6"]
+offset_left = 32.0
+offset_top = -88.0
+offset_right = 296.0
+offset_bottom = 2.0

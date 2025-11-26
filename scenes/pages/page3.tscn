@@ -1,0 +1,189 @@
+[gd_scene load_steps=11 format=3 uid="uid://1a5ol4cuxwsy"]
+
+[ext_resource type="PackedScene" uid="uid://bvtqmo4gussln" path="res://scenes/base/content_page.tscn" id="1_content"]
+[ext_resource type="Texture2D" uid="uid://budlkhsx1w2yj" path="res://assets/images/pages/page3.png" id="2_bg"]
+[ext_resource type="Script" uid="uid://cee7r7c7evmwp" path="res://scripts/pages/page3.gd" id="3_script"]
+[ext_resource type="Texture2D" uid="uid://8u0sckc1ujhp" path="res://assets/images/animations/page3/tree1.png" id="4_tree"]
+[ext_resource type="Texture2D" uid="uid://dm4xfuh5qkf0o" path="res://assets/images/instructions/instrucao-page3.png" id="5_instruction"]
+[ext_resource type="Texture2D" uid="uid://dxdmt6yew4h4r" path="res://assets/images/animations/page3/itens/rockpng.png" id="6_rock"]
+[ext_resource type="Texture2D" uid="uid://cicaqfe1cg4x4" path="res://assets/images/animations/page3/itens/certificate.png" id="7_certificate"]
+[ext_resource type="Texture2D" uid="uid://dmgaqgfv5scai" path="res://assets/images/animations/page3/itens/coin.png" id="8_coin"]
+[ext_resource type="Texture2D" uid="uid://d1n0gvsbh5rxn" path="res://assets/images/animations/page3/itens/money.png" id="9_money"]
+[ext_resource type="Texture2D" uid="uid://drdbvowhonb37" path="res://assets/images/text-balloon/page3-pos-interaction.png" id="10_balloon"]
+
+[node name="Page3" instance=ExtResource("1_content")]
+script = ExtResource("3_script")
+
+[node name="background" parent="." index="0"]
+texture = ExtResource("2_bg")
+
+[node name="MainContainer" type="Control" parent="." index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ZoomContainer" type="Control" parent="MainContainer" index="0"]
+clip_contents = true
+layout_mode = 1
+anchor_left = 0.417
+anchor_top = 0.437
+anchor_right = 0.937
+anchor_bottom = 0.914
+offset_left = -0.256012
+offset_top = 40.512
+offset_right = 0.383972
+offset_bottom = 0.0639648
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TreeAligner" type="AspectRatioContainer" parent="MainContainer/ZoomContainer" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.023
+anchor_right = 0.997
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 7.752
+offset_right = 4.24799
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment_vertical = 2
+
+[node name="TreeSprite" type="TextureRect" parent="MainContainer/ZoomContainer/TreeAligner" index="0"]
+layout_mode = 2
+texture = ExtResource("4_tree")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="InstructionSprite" type="TextureRect" parent="MainContainer" index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.081
+anchor_top = 0.416
+anchor_right = 0.565
+anchor_bottom = 0.677
+offset_left = -6.208
+offset_top = 15.016
+offset_right = 0.0800171
+offset_bottom = -98.248
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_instruction")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PostZoomContainer" type="Control" parent="MainContainer" index="2"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RockItem" type="TextureRect" parent="MainContainer/PostZoomContainer" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.687
+anchor_top = 0.742
+anchor_right = 0.937
+anchor_bottom = 0.883
+offset_left = 48.384
+offset_top = 56.192
+offset_right = -79.616
+offset_bottom = -34.192
+texture = ExtResource("6_rock")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RichItemsContainer" type="Control" parent="MainContainer/PostZoomContainer" index="1"]
+layout_mode = 1
+anchor_left = 0.427
+anchor_top = 0.6
+anchor_right = 0.8
+anchor_bottom = 0.875
+offset_left = -7.936
+offset_top = 81.6
+offset_right = -174.4
+offset_bottom = 4.99994
+
+[node name="Certificate" type="TextureRect" parent="MainContainer/PostZoomContainer/RichItemsContainer" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.067
+anchor_top = 0.234
+anchor_right = 1.733
+anchor_bottom = 1.0
+offset_left = -0.04
+offset_top = 80.03
+offset_right = -134.358
+offset_bottom = 25.5562
+texture = ExtResource("7_certificate")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Coin" type="TextureRect" parent="MainContainer/PostZoomContainer/RichItemsContainer" index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.067
+anchor_top = 0.312
+anchor_right = 1.667
+anchor_bottom = 1.0
+offset_left = 71.96
+offset_top = 16.04
+offset_right = -72.04
+offset_bottom = -54.0
+texture = ExtResource("8_coin")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Money" type="TextureRect" parent="MainContainer/PostZoomContainer/RichItemsContainer" index="2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.067
+anchor_top = 0.429
+anchor_right = 1.733
+anchor_bottom = 1.0
+offset_left = 103.96
+offset_top = 40.055
+offset_right = -30.3584
+offset_bottom = 25.5485
+texture = ExtResource("9_money")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextBalloon" type="TextureRect" parent="MainContainer/PostZoomContainer" index="2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.073
+anchor_top = 0.437
+anchor_right = 0.469
+anchor_bottom = 0.873
+offset_left = -0.064003
+offset_top = -23.488
+offset_right = -0.192017
+offset_bottom = -77.952
+texture = ExtResource("10_balloon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="botao-proximo" parent="." index="3"]
+offset_left = -208.0
+offset_top = -87.9999
+offset_right = 63.0001
+offset_bottom = 14.0
+
+[node name="botao-anterior" parent="." index="4"]
+offset_left = 32.0
+offset_top = -88.0
+offset_right = 296.0
+offset_bottom = 2.0
