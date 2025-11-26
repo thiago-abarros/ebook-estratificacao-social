@@ -40,7 +40,38 @@ texture = ExtResource("4_grass")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="SeedsContainer" type="Control" parent="MainContainer" index="1"]
+[node name="Instruction" type="TextureRect" parent="MainContainer" index="1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08
+anchor_top = 0.442
+anchor_right = 0.372
+anchor_bottom = 0.662
+offset_left = -8.44
+offset_top = -7.60803
+offset_right = 13.304
+offset_bottom = -101.888
+texture = ExtResource("5_instruction")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextBalloon" type="TextureRect" parent="MainContainer" index="2"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.047
+anchor_top = 0.436
+anchor_right = 0.423
+anchor_bottom = 0.909
+offset_left = 12.904
+offset_top = -1.46402
+offset_right = 26.136
+offset_bottom = -136.816
+texture = ExtResource("8_balloon")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SeedsContainer" type="Control" parent="MainContainer" index="3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -110,37 +141,6 @@ offset_top = 274.8
 offset_right = 16.72
 offset_bottom = -117.392
 texture = ExtResource("7_seed_heavy")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="Instruction" type="TextureRect" parent="MainContainer" index="2"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.08
-anchor_top = 0.442
-anchor_right = 0.372
-anchor_bottom = 0.662
-offset_left = -8.44
-offset_top = -7.60803
-offset_right = 13.304
-offset_bottom = -101.888
-texture = ExtResource("5_instruction")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="TextBalloon" type="TextureRect" parent="MainContainer" index="3"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.047
-anchor_top = 0.436
-anchor_right = 0.423
-anchor_bottom = 0.909
-offset_left = 12.904
-offset_top = -1.46402
-offset_right = 26.136
-offset_bottom = -136.816
-texture = ExtResource("8_balloon")
 expand_mode = 1
 stretch_mode = 5
 

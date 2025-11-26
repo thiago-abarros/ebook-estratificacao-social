@@ -105,7 +105,7 @@ stretch_mode = 5
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource("8_audio")
 
-[node name="botao-proximo" parent="." index="3"]
+[node name="botao-proximo" parent="." index="4"]
 offset_left = -208.0
 offset_top = -87.9999
 offset_right = 63.0001
